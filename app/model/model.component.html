@@ -1,0 +1,20 @@
+<section>
+    <p>{{model.name}}</p>
+    <p>{{model.year}} ({{model.theme_id}})</p>
+</section>
+<article>
+    <img [src]="model.set_img_url || './assets/0.jpg'" (click)="seeBig(model.set_img_url)" [title]="model.name +' - click to see bigger image'">
+</article>
+<section>
+    
+    <img *ngIf="this.addingFlag && !this.isCollection && !this.isWish" (click)="onAdd(model)" class="addingImg" src="../../assets/star-g340e0acbe_640.png" alt="add to collection" title="add to collection">
+    
+    <img *ngIf="this.isCollection" (click)="onRemove(model)" class="removingImg" src="../../assets/star-g340e0acbe_640.png" alt="remove from collection" title="remove from collection">
+    
+    <img *ngIf="!this.isWish && !this.isCollection" class="addingImg" src="../../assets/heart-g4df8a1711_640.png" alt="add to wishlist" title="add to wishlist" (click)="onAddWish(model)">
+    
+    <img *ngIf="this.isWish" class="removingImg" src="../../assets/heart-g4df8a1711_640.png" alt="remove from wishlist" title="remove from wishlist" (click)="onRemoveWish(model)">
+</section>
+<aside *ngIf="this.bigPict" (click)="this.bigPict=null">
+    <img [src]="this.bigPict" alt="" (click)="this.bigPict=null" title="click to close">
+</aside>

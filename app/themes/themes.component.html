@@ -1,0 +1,22 @@
+<button (click)="filterThemes()">Filter</button>
+<input type="text" name="" id="" [(ngModel)]="keyword" (change)="checkKeyword()">
+<button (click)="search()">Search</button>
+<main *ngIf="themesData.length>0 && !filteredFlag && !searchedData">
+    <ul *ngFor="let item of themesData">
+        <li>{{item.id}} - {{item.name}} ({{item.parent_id || "-"}})</li>
+    </ul>
+</main>
+<main *ngIf="themesData.length>0 && filteredFlag && !searchedData">
+    <ul *ngFor="let item of filtered">
+        <li>{{item.id}} - {{item.name}}</li>
+            <ul *ngFor="let child of item.children">
+                <li>{{child.id}} - {{child.name}}</li>
+            </ul>
+        
+    </ul>
+</main>
+<main *ngIf="keyword">
+    <ul *ngFor="let item of searchedData">
+        <li>{{item.id}} - {{item.name}}</li>
+    </ul>
+</main>

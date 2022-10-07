@@ -1,0 +1,38 @@
+<div id="container">
+    <section>
+            <div>
+                    <button (click)="getModel(page)">Get</button>
+                    <button [disabled]="!this.prev" (click)="getModel(0, this.prev, -1)">Prev</button>
+                    <input type="number" name="" id="" min="1" [(ngModel)]="page" (change)="getModel(page)">
+                    <button [disabled]="!this.next || this.changingPage" (click)="getModel(0, this.next, 1)">Next</button>
+            </div>
+            <div>
+                <input type="number" name="" id="" [(ngModel)]="minYear"> -
+                <input type="number" name="" id="" [(ngModel)]="maxYear">
+                <input type="checkbox" name="without" id="without" [(ngModel)]="onlyLS">
+                <label for="without">Only LS</label>
+                <aside *ngIf="maxYear<minYear" id="yearError">Max year must be greater than min year!</aside>
+            </div>
+            <div>
+                    ID: 
+                    <input type="number" name="" id="" min="1" [(ngModel)]="themeID">
+                    <button (click)="getID(themeID)">Search ID</button>
+            </div>
+            <div>
+                    Keyword: 
+                    <input type="text" [(ngModel)]="keyword">
+                    <button (click)="search(keyword)">Search</button>
+                    <button (click)="getRandom()">Random</button>
+                    Columns: <select name="" id="" [(ngModel)]="numOfCols">
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                    </select>
+            </div>
+    </section>
+    <main *ngIf="allData.length > 0">
+            <app-model *ngFor="let item of allData" [model]="item" [isCollection]="compare(item, true)" [isWish]="compare(item, false)" [class.have]="compare(item, true)" [class.wish]="compare(item, false)" [class]="numOfCols"></app-model>
+    </main>
+    <div id="info" *ngIf="allData.length == 0"><h3>No data!</h3></div>
+</div>

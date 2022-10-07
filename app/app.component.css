@@ -1,0 +1,54 @@
+header {
+  text-align: center;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+}
+
+nav div {
+  background-color: lightblue;
+  border: 2px solid #07f;
+  padding: 5px;
+}
+
+nav div:hover {
+  background-color: #07f;
+}
+
+a {
+  text-decoration: none;
+}
+
+.activeLink div {
+  background-color: darkblue;
+  color: #eee;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto;
+}
+
+@media screen and (max-width: 650px) {
+  nav {
+    width: 90%;
+  }
+}

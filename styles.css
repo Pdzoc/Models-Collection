@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: cornflowerblue;
+    font-family: 'Kalam', cursive;
+    font-size: large;
+  }
+  
+  input,
+  button {
+    font-family: 'Kalam', cursive;
+    background-color: lightblue;
+    border: 2px solid #07f;
+    margin-right: 2px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #07f;
+  }
+  
+  button:active {
+    background-color: darkblue;
+  }
+  
+  button:focus {
+    border: 2px solid black;
+  }
+  
+  .addButton {
+    font-family: 'Wingdings 2';
+  }

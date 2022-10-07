@@ -1,0 +1,29 @@
+<div *ngIf="!currentWishList">
+    <p>Your wish list is empty!</p>
+</div>
+<div *ngIf="currentWishList">
+    <h2>You have {{(currentWishList | async).length}} models!</h2>
+</div>
+<select name="" id="" [(ngModel)]="sortingKey">
+    <option value="namea">name (ascending)</option>
+    <option value="named">name (descending)</option>
+    <option value="yeara">year (oldest)</option>
+    <option value="yeard">year (newest)</option>
+    <option value="themea">theme id (ascending)</option>
+    <option value="themed">theme id (descending)</option>
+</select>
+<button (click)="sort()">Sort</button>
+<input type="text" name="" id="" [(ngModel)]="keyword">
+<button (click)="search()">Search</button>
+Columns: <select name="" id="" [(ngModel)]="numOfCols">
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+</select>
+<main *ngIf="currentWishList && !sortedData">
+    <app-model *ngFor="let item of currentWishList | async" [model]="item" [isWish]="true" [class]="numOfCols"></app-model>
+</main>
+<main *ngIf="sortedData">
+    <app-model *ngFor="let item of sortedData" [model]="item" [isWish]="true" [class]="numOfCols"></app-model>
+</main>
