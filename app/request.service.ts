@@ -30,7 +30,7 @@ export class RequestService {
 
  
 
-  apiKey = 'key=6f69282068ab3ad0e8fa50953d29b1bf';
+  apiKey = 'key=';
   base = 'https://rebrickable.com/api/v3/lego/';
   urlPrev = '';
   urlNext = '';
