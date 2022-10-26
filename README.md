@@ -2,7 +2,9 @@
 
 Link: https://models-collection.netlify.app/
 
-Based on Minifig Collection "tool" with new features:
+## This app will provide fun for children and their parents! If you had models of Lego Company you can rebuild your collection from the past - show your children old sets and additionally teach them many new english words.
+
+Based on [Minifig Collection](https://github.com/Pdzoc/Minifigs-Collection) "tool" (browsing Rebrickable database - this time models) with new features:
 - choose number of columns
 - two lists: collection and wishlist
 - sorting collection and wishlist by name, year, id
@@ -13,4 +15,6 @@ Based on Minifig Collection "tool" with new features:
 - searching themes by name
 - random model (includes whole database)
 - "onclick" displaing enlarged image
+
+
 
